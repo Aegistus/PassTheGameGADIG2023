@@ -1,0 +1,41 @@
+I don't want to give a ton of notes, as the whole point of the challenge
+is "no communication" but I just wanted to say a few things that I think
+are OK ish:
+
+1. This game is kind of an MVP as I'm handing it off. It is playable
+from start to finish with 4 levels. So in case that leaves a feeling
+that, like, anything here is set in stone: it isn't. Feel free to
+throw away anything; all 4 levels; any mechanics you don't like, etc.
+
+If you totally dislike the levels system you may even want to tear out
+a lot of the code I wrote; e.g. things like GameManager, MainMenu,
+WinScreen are all sort of tied into the current gameplay that I designed.
+
+2. My project layout may be a little less traditional, so I wanted to
+briefly explain it.
+
+Basically, each separate thing gets its own folder. So the Player gets
+a folder with Player-related things. The Tiles folder contains tiles.
+The Objects folder contains things that seem like objects, like a
+crate or whatever.
+
+Then, if an object has a lot of other files associated with it, like
+animations, etc, it gets its own folder *inside* the objects folder.
+
+I would usually also put, like, the Player script inside the Player folder,
+but so far all the scripts have ended up just in Assets... and all
+the scenes have ended up under Scenes.
+
+This may be a little messy. Sorry. The good news is you could technically
+reorganize everything if you want. There's not that many different
+sprites/scripts/scenes/prefabs.
+
+3. I have commented some of the code. My goal is largely to comment this
+as though I was working on my own game, so hopefully it doesn't feel
+rule-breaking.
+
+I am inexperienced in Unity so some of the comments are for my own good
+in that way.
+
+
+

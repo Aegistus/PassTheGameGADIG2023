@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: f64028376d8a1304ea603a3550663498
+  - enabled: 0
+    path: Assets/Scenes/LevelTemplateScene.unity
+    guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Levels/FirstLevel.unity
+    guid: bdb77060b7d077a4492da21c9fd4b0fe
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: dea2a89a9780e384bb439615c21ca3f5
+  - enabled: 1
+    path: Assets/Scenes/Levels/PryFromWalls.unity
+    guid: 55817885b41ba5a4cb88ab5245640c9a
+  - enabled: 1
+    path: Assets/Scenes/Levels/LiftUsingWall.unity
+    guid: bc1fc084abff2d244865df72eec92463
+  - enabled: 1
+    path: Assets/Scenes/Levels/LiftUsingSeesaw.unity
+    guid: b17048ac2e7d4cf46ac61a6836999cc9
+  m_configObjects: {}
