@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,8 @@ public class Player : MonoBehaviour
     PlayerCannon cannon;
 
     Rigidbody2D rigidbody;
+
+    ParticleSystem hitParticles;
 
     // Timer for repeatedly firing by holding down the mouse.
     float repeatingFireTimer = 0.0f;
@@ -20,6 +23,7 @@ public class Player : MonoBehaviour
     {
         cannon = GetComponentInChildren<PlayerCannon>();
         rigidbody = GetComponent<Rigidbody2D>();
+        hitParticles = GetComponentInChildren<ParticleSystem>();
     }
 
 
@@ -29,6 +33,10 @@ public class Player : MonoBehaviour
         Vector2 dir = cannon.Fire();
 
         // Apply the impulse from the cannon shot.
+        foreach (var body in GetComponentsInChildren<Rigidbody2D>())
+        {
+            body.velocity += dir * -4.0f;
+        }
         rigidbody.velocity += dir * -4.0f;
 
         // Reset the repeating fire timer by un-accumulating time.
@@ -70,8 +78,15 @@ public class Player : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+    void OnCollisionEnter2D(Collision2D col)
     {
-        
+        if (col.relativeVelocity.magnitude > 2)
+        {
+            hitParticles.Play();
+        }
+        else
+        {
+            print("too small");
+        }
     }
 }

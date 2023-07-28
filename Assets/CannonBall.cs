@@ -9,17 +9,19 @@ public class CannonBall : MonoBehaviour
     // How long the cannon ball will last until it fades & despawns.
     float lifetime = 8.0f;
 
-    // How long the animatino of the cannon ball fading away takes.
+    // How long the animation of the cannon ball fading away takes.
     const float FADE_TIME = 1.0f;
 
     // How transparent the cannon ball is at most.
     const float MAX_OPACITY = 0.9f;
 
     SpriteRenderer spriteRenderer;
+    ParticleSystem particles;
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        particles = GetComponentInChildren<ParticleSystem>();
         setOpacity(MAX_OPACITY);
     }
 
@@ -57,6 +59,8 @@ public class CannonBall : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        SoundManager.PlayAtPosition("bullet_hit", transform.position);
+        
         Rigidbody2D body = GetComponent<Rigidbody2D>();
 
         // Re-parent ourselves to whatever we collided with.

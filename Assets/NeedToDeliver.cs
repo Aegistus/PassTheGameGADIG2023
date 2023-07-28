@@ -36,6 +36,7 @@ public class NeedToDeliver : MonoBehaviour
 
         // Track all deliveries in one place, the DeliveryManager
         DeliveryManager.Instance.AddDelivery();
+        SoundManager.PlayAtPosition("flag_enter", transform.position);
     }
 
     // Called if this delivery had been winning but now isn't.
@@ -43,6 +44,7 @@ public class NeedToDeliver : MonoBehaviour
     {
         checkMark.SetActive(false); // Show the check mark when we are un-delivered
         DeliveryManager.Instance.MinusDelivery();
+        SoundManager.PlayAtPosition("flag_exit", transform.position);
     }
 }
 
